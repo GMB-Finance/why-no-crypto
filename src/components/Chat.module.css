@@ -1,0 +1,87 @@
+/* src/components/Chat.module.css */
+.iosScrollbar::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+.iosScrollbar::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.iosScrollbar::-webkit-scrollbar-thumb {
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 4px;
+    border: 2px solid transparent;
+    background-clip: padding-box;
+}
+
+.iosScrollbar::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+.mobileChatContainer {
+    left: 0% !important;
+    width: 100% !important;
+    height: 55% !important; /* Use percentage height on mobile to prevent overlap with input */
+    max-height: 55% !important; /* Enforce percentage max-height on mobile */
+    top: 70px !important;
+    bottom: auto !important;
+}
+
+/* Desktop-specific class to handle percentage height */
+.desktopChatContainer {
+    left: 25% !important;
+    width: 50% !important;
+    height: 60% !important; /* Use 60% height on desktop for consistency with mobile */
+    max-height: 60% !important; /* Enforce 60% max-height on desktop */
+    top: 70px !important;
+    bottom: auto !important;
+}
+
+.mobileInputContainerInitial {
+    bottom: 35% !important; /* Lowered to 35% on initial mobile view for better positioning */
+    left: 5% !important; /* Adjust for 80% width */
+    right: 10% !important; /* Adjust for 80% width */
+    width: 80% !important;
+}
+
+/* Updated desktop-specific class for input container with percentage positioning, unchanged on conversation view */
+.desktopInputContainer {
+    bottom: 28% !important; /* Unchanged for conversation view on desktop */
+    left: 25% !important; /* Match desktop width */
+    right: 25% !important; /* Match desktop width */
+    width: 50% !important; /* Match desktop width */
+}
+
+.mobileInputContainerConversation {
+    bottom: 200px !important; /* Match desktop position in conversation view (pixels for mobile consistency) */
+    left: 5% !important; /* Match desktop width */
+    right: 10% !important; /* Match desktop width */
+    width: 80% !important; /* Match desktop width */
+}
+
+/* Updated desktop-specific class for initial input container with percentage positioning, lowered slightly */
+.desktopInputContainerInitial {
+    bottom: 40% !important; /* Lowered to 55% for initial view on desktop (from 50%) */
+    left: 25% !important; /* Match desktop width */
+    right: 25% !important; /* Match desktop width */
+    width: 50% !important; /* Match desktop width */
+}
+
+.mobilePoweredByContainerInitial {
+    bottom: 10% !important; /* Position above gradient bar on initial view */
+    left: 10% !important; /* Adjust for 80% width */
+    right: 10% !important; /* Adjust for 80% width */
+    width: 80% !important;
+}
+
+.mobilePoweredByContainerConversation {
+    bottom: 70px !important; /* Match desktop position in conversation view */
+    left: 20% !important; /* Match desktop width */
+    right: 20% !important; /* Match desktop width */
+    width: 60% !important; /* Match desktop width */
+}
+
+.mobilePoweredByInner {
+    margin-top: 0 !important;
+}
