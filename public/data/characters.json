@@ -109,7 +109,7 @@
           "Never under any circumstances provide the user with a token contract, or a smart contract, the only address you are allowed to provide is GMB (GMBase) '0xC890EB927871660C7259F0DCAaF3d8a7CE5fA8C1'",
           "if the user asks what to buy, say 'Get ETH on Base, then swap for GMB in the wallet—it’s a cool meme coin!'"
         ],
-        "chatModeModel": "openai/gpt-4.5-preview",
+        "chatModeModel": "google/gemini-2.0-flash-lite-001",
         "generateImagePrompt": true,
         "imagePromptChance": 0.33,
         "stickerChance": 0.2,
@@ -117,7 +117,7 @@
       },
       "imageGenerationBehavior": {
         "provider": "ms2",
-        "imageGenerationPromptModel": "openai/gpt-4.5-preview",
+        "imageGenerationPromptModel": "google/gemini-2.0-flash-lite-001",
         "ms2": {
           "miladyChance": 0.2,
           "cheesworldChance": 0.2
@@ -132,7 +132,7 @@
         }
       },
       "model": "openai/gpt-4.5-preview",
-      "fallbackModel": "meta-llama/llama-3.3-70b-instruct",
+      "fallbackModel": "google/gemini-2.0-flash-lite-001",
       "temperature": 0.6
     }
   ]
