@@ -81,7 +81,7 @@ The chatbot’s behavior is defined in `public/data/characters.json`.
   - Prompt exceeds 526 tokens (free tier). Upgrade to a paid OpenRouter plan or trim `bio`, `postDirections`, or `chatModeRules` in `characters.json`.
 
 - **No Response:**
-  - Verify OpenRouter API key and model (`anthropic/claude-3.5-sonnet`).
+  - Verify OpenRouter API key and model.
   - Check server logs after `npm run start` for errors (e.g., `node .next/server/pages/api/chat.js`).
 
 ## Contributing
