@@ -1,8 +1,9 @@
-Why No Crypto - Wyno Chatbot
-
-A friendly, AI-powered chatbot designed to guide Web2 users into Web3 with a focus on buying ETH on Base and swapping for GMB (GMbase) using Coinbase Wallet. Built with Next.js and powered by GMbase and Oracle Framework, Wyno offers clear, actionable advice in a conversational chatbox interface.
+**Why No Crypto - Wyno Chatbot**
 
 <img width="1485" alt="Wyno Official" src="https://github.com/user-attachments/assets/743c94a3-ab07-48ca-9d28-289a814ce8a7" />
+
+
+A friendly, AI-powered chatbot designed to guide Web2 users into Web3 with a focus on buying ETH on Base and swapping for GMB (GMbase) using Coinbase Wallet. Built with Next.js and powered by GMbase and Oracle Framework, Wyno offers clear, actionable advice in a conversational chatbox interface.
 
 Features
 Empathetic Guidance: Responds with understanding (e.g., "I get it") and simple analogies (e.g., "digital piggy bank").
