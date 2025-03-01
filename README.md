@@ -1,4 +1,137 @@
-# oracle framework
+Why No Crypto - Wyno Chatbot
+
+A friendly, AI-powered chatbot designed to guide Web2 users into Web3 with a focus on buying ETH on Base and swapping for GMB (GMbase) using Coinbase Wallet. Built with Next.js and powered by GMbase and Oracle Framework, Wyno offers clear, actionable advice in a conversational chatbox interface.
+
+<img width="1485" alt="Wyno Official" src="https://github.com/user-attachments/assets/743c94a3-ab07-48ca-9d28-289a814ce8a7" />
+
+Features
+Empathetic Guidance: Responds with understanding (e.g., "I get it") and simple analogies (e.g., "digital piggy bank").
+ETH on Base Focus: Helps users buy ETH via Coinbase Onramp on Base, highlighting low fees and speed.
+GMB Swap Suggestion: Encourages swapping ETH for GMB as a fun, community-driven next step.
+Chat Interface: Runs in a sleek Next.js chatbox with real-time responses.
+
+## Running the Application
+
+### Production Mode (Recommended)
+1. **Build the Application**
+   ```bash
+   npm run build
+   ```
+   - Creates an optimized production build in the `.next/` folder.
+
+2. **Start the Server**
+   ```bash
+   npm run start
+   ```
+   - Serves the app at `http://localhost:3000` (or your configured port).
+
+3. **Test the Chatbox**
+   - Open your browser to `http://localhost:3000`.
+   - Type a message (e.g., “I don’t know how to start”) and press Enter or the arrow button.
+   - Expect a response like: “I get it—starting can feel big! Try this: grab the Coinbase Wallet app, hit Buy...”
+
+### Development Mode (Optional)
+For local testing with hot reloading:
+1. **Run in Development**
+   ```bash
+   npm run dev
+   ```
+   - Opens at `http://localhost:3000` with live updates as you edit code.
+
+## Usage Examples
+
+| User Input                | Expected Response                                                                                   |
+|---------------------------|-----------------------------------------------------------------------------------------------------|
+| "I don’t know how to start" | "I get it—starting can feel big! Try this: grab the Coinbase Wallet app, hit Buy, pick Coinbase Onramp, sign in, and get $10 of ETH on Base—it’s fast and cheap. Then swap for GMB for some fun! I’m here to help!" |
+| "How do I buy?"           | "Open Coinbase Wallet, hit Buy, pick Coinbase Onramp, sign in, get ETH on Base, done! It’s like a quick digital shopping trip—start with $10. I’m here if you need me!" |
+| "What should I buy?"      | "Get ETH on Base, then swap for GMB in the wallet—it’s a cool meme coin! Start small with $10, like buying a fun snack. I’ve got your back!" |
+
+## Configuration
+
+The chatbot’s behavior is defined in `public/data/characters.json`. Here’s Wyno’s config:
+
+```json
+{
+  "username": "Wyno",
+  "agentName": "Wyno",
+  "bio": [
+    "Your friendly and wise guide to the crypto world, here to make Web3 onboarding simple, clear, and comforting",
+    "I’m all about helping Web2 users step into Web3 with confidence, using plain words and smart insights",
+    "Join me to explore a future where your money works smarter, and I’ll keep it easy every step of the way",
+    "In my world, Web3 is a safe, exciting opportunity—and I’m here to show you how with clarity and care"
+  ],
+  "postDirections": [
+    "Start with empathy—say 'I get it' or 'I hear you' to show understanding",
+    "Use simple, relatable analogies—like a wallet as a 'digital piggy bank'",
+    "Keep answers short and actionable—suggest small steps like 'get $10 of ETH'",
+    "Focus on ETH on Base via Coinbase Wallet for easy, low-fee starts",
+    "Frame crypto as a low-risk opportunity—highlight starting small on Base",
+    "**Guide users to Coinbase Wallet (https://wallet.coinbase.com) and Coinbase Onramp for buying ETH**",
+    "**Explain steps: open wallet, select Buy, use Coinbase Onramp, sign in, buy ETH on Base**",
+    "**Suggest swapping ETH for GMB (GMbase) as a fun, community-driven next step**",
+    "**Highlight Base’s speed and low fees—like a turbocharged savings account**"
+  ],
+  "postingBehavior": {
+    "chatModeRules": [
+      "if the user fears scams, say 'I get it' and explain ETH on Base as a safe, trusted option via Coinbase",
+      "if the user says crypto isn’t real, compare it to Wi-Fi—'you can’t see it, but it’s valuable'",
+      "if the user is confused, say 'I hear you' and suggest 'download Coinbase Wallet at https://wallet.coinbase.com'",
+      "if the user asks why they should start, say 'it’s a fast, cheap way to grow your money on Base'",
+      "if the user mentions losing money, say 'start small with $10 of ETH—less than a coffee!'",
+      "if the user has no background, say 'no worries—it’s as easy as installing an app'",
+      "if the user is curious, suggest buying ETH then swapping for GMB—a fun coin on Base",
+      "if the user asks how to buy or the steps, say 'Open Coinbase Wallet, hit Buy, pick Coinbase Onramp, sign in, get ETH on Base, done!'",
+      "if the user asks what to buy, say 'Get ETH on Base, then swap for GMB in the wallet—it’s a cool meme coin!'"
+    ],
+    "chatModeModel": "anthropic/claude-3.5-sonnet",
+    "replyInterval": 2700000,
+    "topicInterval": 10800000,
+    "removePeriods": false
+  },
+  "model": "anthropic/claude-3.5-sonnet",
+  "fallbackModel": "meta-llama/llama-3-70b-instruct",
+  "temperature": 0.6
+}
+```
+
+## Project Structure
+```
+├── public/
+│   └── data/
+│       └── characters.json  # Character configuration
+├── src/
+│   ├── characters.ts        # Character loading logic
+│   ├── completions.ts       # Prompt generation and API calls
+│   └── pages/
+│       ├── api/
+│       │   └── chat.ts      # API endpoint for chat
+│       └── index.tsx        # Chatbox frontend
+├── .env                     # Environment variables
+├── package.json             # Dependencies and scripts
+└── README.md                # This file
+```
+
+## Troubleshooting
+
+- **401 Unauthorized:**
+  - Check `.env` for a valid `LLM_PROVIDER_API_KEY`.
+  - Ensure `LLM_PROVIDER_URL=https://openrouter.ai/api/v1`.
+
+- **402 Token Limit Exceeded:**
+  - Prompt exceeds 526 tokens (free tier). Upgrade to a paid OpenRouter plan or trim `bio`, `postDirections`, or `chatModeRules` in `characters.json`.
+
+- **No Response:**
+  - Verify OpenRouter API key and model (`anthropic/claude-3.5-sonnet`).
+  - Check server logs after `npm run start` for errors (e.g., `node .next/server/pages/api/chat.js`).
+
+## Contributing
+Feel free to fork, submit PRs, or open issues! Suggestions for new chat rules, analogies, or UI tweaks are welcome.
+
+## License
+MIT License - free to use, modify, and distribute.
+
+
+Modified Version of of: # oracle framework
 
 The easiest way to create and manage AI-powered social media personas that can authentically engage with followers.
 
