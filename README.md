@@ -1,8 +1,11 @@
 ## **Why No Crypto - Wyno Chatbot**
 
-<img width="1485" alt="Wyno Official" src="https://github.com/user-attachments/assets/743c94a3-ab07-48ca-9d28-289a814ce8a7" />
+<img width="1000" alt="Wyno Official" src="https://github.com/user-attachments/assets/743c94a3-ab07-48ca-9d28-289a814ce8a7" />
 
 ## 
+<div align="center">
+    <img width="50" alt="Wyno Official" src="https://github.com/user-attachments/assets/0b540407-f20c-483b-af9e-4a56ffcfd1fc" />
+</div>
 
 A friendly, AI-powered chatbot designed to guide Web2 users into Web3 with a focus on buying ETH on Base and swapping for **GMB (GMbase)** using Coinbase Wallet, as well as beyond trading acivities such as minting NFTs, Play to Earn, Coinbase Earn Tasks and more. 
 
