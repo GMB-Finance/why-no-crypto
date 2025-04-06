@@ -1,3 +1,4 @@
+wyno Created and maintained by @iam-rekt
 ## **Why No Crypto - Wyno Chatbot**
 
 <img width="1000" alt="Wyno Official" src="https://github.com/user-attachments/assets/743c94a3-ab07-48ca-9d28-289a814ce8a7" />
